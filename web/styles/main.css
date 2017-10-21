@@ -1,5 +1,5 @@
 body{
-	background: #f2f4f6 url(images/image3.jpg) 0 20px;
+	background: #f2f4f6 url(../images/bg.jpg) 0 20px;
 }
 #logo{
 	margin-top: 17px;
@@ -21,8 +21,7 @@ body{
 #content{
 	background: #f2f4f6;
 	width: 960px;
-	margin: 0 auto;
-	margin-top: 20px;
+	margin: 20px auto 0;
 	text-align: center;
 	padding-top: 50px;
 	min-height: 500px;
@@ -39,9 +38,8 @@ body{
 }
 .program{
 	width: 80%;
-	margin: 0 auto;
-	margin-top:20px;
-    overflow: hidden;
+	margin: 20px auto 0;
+	overflow: hidden;
 }
 .form{
 	margin-top:25px;
@@ -110,8 +108,7 @@ body{
 	margin: auto;
 }
 #chooseX h1{
-	margin: 0;
-	margin-bottom: 10px;
+	margin: 0 0 10px;
 	font-family: "Roboto", sans-serif;
 	font-size: 18px;
 }

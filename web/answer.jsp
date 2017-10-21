@@ -10,11 +10,11 @@
 <head>
     <meta charset="utf-8">
     <title>1 Laba</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="styles/styles2.css">
 </head>
 <header>
     <div id="logo" >
-        <img src="images/image2.png">
+        <img src="images/logo.png">
     </div>
     <div id="about">
         WebSite developed by Promotorov Vlad from P3211,variant 356.

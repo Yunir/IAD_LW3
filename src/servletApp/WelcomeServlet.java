@@ -25,7 +25,7 @@ public class WelcomeServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private boolean correct=false;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/index.jsp").include(request, response);
+        request.getRequestDispatcher("/index.xhtml").include(request, response);
     }//End doGet
 
     @Override
@@ -56,7 +56,7 @@ public class WelcomeServlet extends HttpServlet {
                 }
                 if (map.size() != 4) correct = false;
                 if (correct == false) {
-                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                    request.getRequestDispatcher("/index.xhtml").forward(request, response);
                 } else {
                     //writer.println("True....");
                     request.setAttribute("enterX", x);
@@ -71,7 +71,7 @@ public class WelcomeServlet extends HttpServlet {
         }
         catch(Exception exception)
         {
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            request.getRequestDispatcher("/index.xhtml").forward(request, response);
         }
     }
     private double round(double value, int places) {

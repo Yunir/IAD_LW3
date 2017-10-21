@@ -1,13 +1,104 @@
-<!--
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-   <f:view>
-      <h:outputLabel value="Hello, world"/>
-   </f:view>
+<!--<%@ page import="beans.StudentsBean" %>
+<%@ page import="java.util.ArrayList" %>-->
+<html xmlns:h="http://xmlns.jcp.org/jsf/html">
+<!--xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+xmlns:f="http://xmlns.jcp.org/jsf/core"-->
+<h:head>
+    <title>IAD_LW3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--what is it-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="styles/main.css"/>
+    <!--<%
+    if(StudentsBean.sizeList()>0){
+    %>
+    <link rel="stylesheet" href="styles/newstyles.css">
+    <% } %>-->
+    <script type="text/javascript" src="scripts/jquery.min.js"/>
+    <script type="text/javascript" src="scripts/jquery.validate.min.js"/>
+    <script type="text/javascript" src="scripts/validate.js"/>
+    <script type="text/javascript" src="scripts/interactiveImage.js"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
+</h:head>
+<h:body>
+    <div id="header">
+        <div id="logo">
+            <img src="images/logo.png" alt="logo"/>
+        </div>
+        <div id="about">
+            WebSite developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
+        </div>
+    </div>
+    <div id="content" >
+        <div id="description">
+            <h1>What is helpSystems?</h1>
+            HelpSystems is a free service developed by some student to help another students successfully do their homework.<br/>
+            You only need to enter data and the program will do everything for you.
+        </div>
+        <div class="program">
+            <div id="dataimage">
+                <img id="graph" src="images/graph.jpg" alt="graph"/>
+            </div>
+            <div class="form">
+                <h:form method="post" class="data-form" id="myForm">
+                    <input id="enterR" name="enterR" title="r"/>
+                    <br/>
+                    <input id="enterY" name="enterY" title="y"/>
+                    <div id="chooseX">
+                        <h1>Choose X:</h1>
+                        <input type="radio" id="enterX1" name="enterX" value="1"/>
+                        <label for="enterX1">1</label>
+                        <input type="radio" id="enterX2" name="enterX" value="2"/>
+                        <label for="enterX2">2</label>
+                        <input type="radio" id="enterX3" name="enterX" value="3"/>
+                        <label for="enterX3">3</label>
+                        <input type="radio" id="enterX4" name="enterX" value="4"/>
+                        <label for="enterX4">4</label>
+                        <input type="radio" id="enterX5" name="enterX" value="5"/>
+                        <label for="enterX5">5</label>
+                        <br/>
+                        <input type="radio" id="enterX6" name="enterX" value="0"/>
+                        <label for="enterX6">0</label>
+                        <input type="radio" id="enterX7" name="enterX" value="-1"/>
+                        <label for="enterX7">-1</label>
+                        <input type="radio" id="enterX8" name="enterX" value="-2"/>
+                        <label for="enterX8">-2</label>
+                        <input type="radio" id="enterX9" name="enterX" value="-3"/>
+                        <label for="enterX9">-3</label>
+                    </div>
+                    <input type="radio" id="code" name="code" value="1" checked="checked" title="rad"/>
+                    <input type="submit" value="Calculate" id="button"/>
+                </h:form>
+            </div>
+        </div>
+        <div id="refresh"/>
+        <div class="result">
+            <!--<table id="results">
+                <tr><th>R</th><th>X</th><th>Y</th><th><%out.print(StudentsBean.sizeList());%></th></tr>
+                <%
+                if(StudentsBean.sizeList()>0) {
+                ArrayList<StudentsBean> list = StudentsBean.getList();
+                for (StudentsBean bean:list) {
+                %>
+                <tr>
+                    <td><% out.print(bean.getEnterR()); %></td>
+                    <td><% out.print(bean.getEnterX()); %></td>
+                    <td><% out.print(bean.getEnterY()); %></td>
+                    <td><% out.print(bean.getResult()); %></td>
+                </tr>
+                <%
+                }
+                }
+                %>
+            </table>-->
+            <div id="clear">
+                Clear
+            </div>
+        </div>
+    </div>
+</h:body>
 </html>
--->
