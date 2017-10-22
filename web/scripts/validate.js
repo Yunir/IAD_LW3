@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $("#myForm").validate({
+  $("#form").validate({
     rules: {
       enterR: {
         required: true,

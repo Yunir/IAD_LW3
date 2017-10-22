@@ -1,11 +1,15 @@
 package model;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+@ManagedBean(name = "StudentsBean", eager = true)
+@ApplicationScoped
 public class StudentsBean implements Serializable {
     private static ArrayList<StudentsBean> list=new ArrayList<StudentsBean>();
-
+    private String table = null;
     private String enterX = null;
     private String enterY = null;
     private String enterR = null;
@@ -41,7 +45,13 @@ public class StudentsBean implements Serializable {
     public static ArrayList<StudentsBean> getList() {
         return list;
     }
-    public static int sizeList(){
+    public static int getSizeList(){
         return list.size();
+    }
+    public String getTable() {
+        return table;
+    }
+    public void setTable(String table) {
+        this.table = table;
     }
 }

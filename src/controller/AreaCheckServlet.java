@@ -28,7 +28,7 @@ public class AreaCheckServlet extends HttpServlet {
             bean.setEnterY(String.valueOf(enterY));
             bean.setResult(String.valueOf(isInArea));
             //resp.sendRedirect("http://localhost:8080/2labaIAD_war_exploded/answer.jsp");
-            req.getRequestDispatcher("/answer.xhtml").forward(req,resp);
+            req.getRequestDispatcher("view/answer.xhtml").forward(req,resp);
         }
         catch (Exception e){
             e.printStackTrace();

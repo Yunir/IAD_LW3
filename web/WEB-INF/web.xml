@@ -5,30 +5,30 @@
          version="3.1">
 
     <servlet>
-        <servlet-name>checking</servlet-name>
+        <servlet-name>controller</servlet-name>
         <servlet-class>controller.ControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>checking</servlet-name>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/control</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>checker</servlet-name>
+        <servlet-class>controller.AreaCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checker</servlet-name>
         <url-pattern>/check</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>servletExe2</servlet-name>
-        <servlet-class>controller.AreaCheckServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>servletExe2</servlet-name>
-        <url-pattern>/WEB-INF/AreaCheckApp</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>servletExe3</servlet-name>
+        <servlet-name>cleaner</servlet-name>
         <servlet-class>controller.ClearServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>servletExe3</servlet-name>
-        <url-pattern>/WEB-INF/ClearApp</url-pattern>
+        <servlet-name>cleaner</servlet-name>
+        <url-pattern>/clear</url-pattern>
     </servlet-mapping>
 
     <servlet>

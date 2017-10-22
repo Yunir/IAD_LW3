@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:h="http://xmlns.jcp.org/jsf/html">
-<!--xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-xmlns:f="http://xmlns.jcp.org/jsf/core"-->
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>IAD_LW3</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!--what is it-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../styles/main.css"/>
-    <!--<%
-    if(StudentsBean.sizeList()>0){
-    %>
-    <link rel="stylesheet" href="styles/block.css">
-    <% } %>-->
-    <script type="text/javascript" src="../scripts/jquery.min.js"/>
-    <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
     <script type="text/javascript" src="../scripts/validate.js"/>
     <script type="text/javascript" src="../scripts/interactiveImage.js"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
+    <script type="text/javascript" src="../scripts/graph.js"/>
 </h:head>
 <h:body>
     <div id="header">
@@ -31,52 +21,54 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
             WebSite developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
         </div>
     </div>
-    <div id="content" >
+    <div id="content">
         <div id="description">
             <h1>What is helpSystems?</h1>
-            HelpSystems is a free service developed by some student to help another students successfully do their homework.<br/>
-            You only need to enter data and the program will do everything for you.
+            <p>HelpSystems is a free service developed by some student to help another students successfully do their homework.</p>
+            <p>You only need to enter data and the program will do everything for you.</p>
         </div>
         <div class="program">
-            <div id="dataimage">
-                <img id="graph" src="../images/graph.jpg" alt="graph"/>
-            </div>
             <div class="form">
-                <h:form method="post" class="data-form" id="myForm">
-                    <input id="enterR" name="enterR" title="r"/>
+                <h:form method="post" class="data-form" id="form">
+                    Choose X:
+                    <h:selectOneMenu value = "#{StudentsBean.enterX}">
+                        <f:selectItem itemValue = "enterX1" itemLabel = "-2"/>
+                        <f:selectItem itemValue = "enterX2" itemLabel = "-1.5"/>
+                        <f:selectItem itemValue = "enterX3" itemLabel = "-1"/>
+                        <f:selectItem itemValue = "enterX4" itemLabel = "-0.5"/>
+                        <f:selectItem itemValue = "enterX5" itemLabel = "0"/>
+                        <f:selectItem itemValue = "enterX6" itemLabel = "0.5"/>
+                        <f:selectItem itemValue = "enterX7" itemLabel = "1"/>
+                        <f:selectItem itemValue = "enterX8" itemLabel = "1.5"/>
+                        <f:selectItem itemValue = "enterX9" itemLabel = "2"/>
+                    </h:selectOneMenu>
                     <br/>
-                    <input id="enterY" name="enterY" title="y"/>
-                    <div id="chooseX">
-                        <h1>Choose X:</h1>
-                        <input type="radio" id="enterX1" name="enterX" value="1"/>
-                        <label for="enterX1">1</label>
-                        <input type="radio" id="enterX2" name="enterX" value="2"/>
-                        <label for="enterX2">2</label>
-                        <input type="radio" id="enterX3" name="enterX" value="3"/>
-                        <label for="enterX3">3</label>
-                        <input type="radio" id="enterX4" name="enterX" value="4"/>
-                        <label for="enterX4">4</label>
-                        <input type="radio" id="enterX5" name="enterX" value="5"/>
-                        <label for="enterX5">5</label>
-                        <br/>
-                        <input type="radio" id="enterX6" name="enterX" value="0"/>
-                        <label for="enterX6">0</label>
-                        <input type="radio" id="enterX7" name="enterX" value="-1"/>
-                        <label for="enterX7">-1</label>
-                        <input type="radio" id="enterX8" name="enterX" value="-2"/>
-                        <label for="enterX8">-2</label>
-                        <input type="radio" id="enterX9" name="enterX" value="-3"/>
-                        <label for="enterX9">-3</label>
-                    </div>
+                    Write Y:
+                    <h:inputText id="enterY" name="enterY" title="y"/>
+                    <br/>
+                    <h:commandButton value="1" type="submit" action="1" />
+                    <h:commandButton value="2" type="submit" action="2" />
+                    <h:commandButton value="3" type="submit" action="3" />
+                    <h:commandButton value="4" type="submit" action="4" />
+                    <h:commandButton value="5" type="submit" action="5" />
+                    <br/>
                     <input type="radio" id="code" name="code" value="1" checked="checked" title="rad"/>
                     <input type="submit" value="Calculate" id="button"/>
                 </h:form>
             </div>
+            <canvas id="plot" width="300" height="300">
+                Canvas not support
+            </canvas>
         </div>
         <div id="refresh"/>
         <div class="result">
             <table id="results">
-                <tr><th>R</th><th>X</th><th>Y</th><th>#{StudentsBean.sizeList()}</th></tr>
+                <tr>
+                    <th>R</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th><!--TODO: here we need to get size--></th>
+                </tr>
                 <!--<%
                 if(StudentsBean.sizeList()>0) {
                 ArrayList<StudentsBean> list = StudentsBean.getList();
@@ -94,7 +86,7 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
                 %>-->
             </table>
             <div id="clear">
-                Clear
+                Clear results
             </div>
         </div>
     </div>

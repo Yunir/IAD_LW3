@@ -13,7 +13,7 @@ public class ControllerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private boolean correct=false;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/index.xhtml").include(request, response);
+        request.getRequestDispatcher("view/index.xhtml").include(request, response);
     }//End doGet
 
     @Override
@@ -44,22 +44,22 @@ public class ControllerServlet extends HttpServlet {
                 }
                 if (map.size() != 4) correct = false;
                 if (correct == false) {
-                    request.getRequestDispatcher("/index.xhtml").forward(request, response);
+                    request.getRequestDispatcher("view/index.xhtml").forward(request, response);
                 } else {
                     //writer.println("True....");
                     request.setAttribute("enterX", x);
                     request.setAttribute("enterY", y);
                     request.setAttribute("enterR", r);
-                    request.getRequestDispatcher("/WEB-INF/AreaCheckApp").forward(request, response);
+                    request.getRequestDispatcher("/check").forward(request, response);
                 }
             }
             else if(code==3){
-                request.getRequestDispatcher("/WEB-INF/ClearApp").forward(request, response);
+                request.getRequestDispatcher("/clear").forward(request, response);
             }
         }
         catch(Exception exception)
         {
-            request.getRequestDispatcher("/index.xhtml").forward(request, response);
+            request.getRequestDispatcher("view/index.xhtml").forward(request, response);
         }
     }
     private double round(double value, int places) {
