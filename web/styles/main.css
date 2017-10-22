@@ -23,7 +23,7 @@ body {
     width: 960px;
     margin: 0 auto 0;
     text-align: center;
-    min-height: 500px;
+    min-height: 600px;
     overflow: hidden;
 }
 #time {
@@ -46,6 +46,11 @@ body {
     margin: 20px auto 0;
     overflow: hidden;
 }
+
+#leftSide {
+    float:left;
+}
+
 
 .form {
     float: right;
@@ -185,11 +190,10 @@ input.error {
         width: 100%;
     }
 }
-
-.result {
+/*.result {
     display: block;
 }
 
 #clear {
     display: block;
-}
+}*/

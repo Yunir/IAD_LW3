@@ -1,7 +1,6 @@
 $(document).ready(function(){
     var plot_canvas = document.getElementById("plot");
     var plot_context = plot_canvas.getContext("2d");
-    var rr = document.getElementById("r");
     plot_context.beginPath();
     plot_context.arc(150, 150, 100, 0, Math.PI/2);
     plot_context.lineTo(150, 150);
@@ -37,10 +36,13 @@ $(document).ready(function(){
     var x;
     var y;
     var R = '-1';
-    rr.addEventListener("click", changeR, false);
+    document.getElementById("r1").addEventListener("click", changeR1, false);
+    document.getElementById("r2").addEventListener("click", changeR2, false);
+    document.getElementById("r3").addEventListener("click", changeR3, false);
+    document.getElementById("r4").addEventListener("click", changeR4, false);
+    document.getElementById("r5").addEventListener("click", changeR5, false);
     plot_canvas.addEventListener("click", drawPoint, false);
     function drawPoint(e) {
-        //$('#if').hide();
         if(R == '-1') {
             alert("Выберите какое-нибудь значение R");
         } else {
@@ -54,7 +56,7 @@ $(document).ready(function(){
             y *= -1;
             x = x/100*R;
             y = y/100*R;
-            //alert(x + " " + y);
+            alert(x + " " + y);
             $.ajax({
                 type:'post',//тип запроса: get,post либо head
                 url:'controller',//url адрес файла обработчика
@@ -96,21 +98,25 @@ $(document).ready(function(){
         x -= plot_canvas.offsetLeft ;
         y -= plot_canvas.offsetTop ;
     }
-    function changeR(e) {
-        if (document.getElementById('r1').checked) {
-            R = document.getElementById('r1').value;
-        }
-        if (document.getElementById('r2').checked) {
-            R = document.getElementById('r2').value;
-        }
-        if (document.getElementById('r3').checked) {
-            R = document.getElementById('r3').value;
-        }
-        if (document.getElementById('r4').checked) {
-            R = document.getElementById('r4').value;
-        }
-        if (document.getElementById('r5').checked) {
-            R = document.getElementById('r5').value;
-        }
+
+    function changeR1(e) {
+        R = 1;
+        document.getElementById("infoR").innerHTML = "You set R = 1";
+    }
+    function changeR2(e) {
+        R = 2;
+        document.getElementById("infoR").innerHTML = "You set R = 2";
+    }
+    function changeR3(e) {
+        R = 3;
+        document.getElementById("infoR").innerHTML = "You set R = 3";
+    }
+    function changeR4(e) {
+        R = 4;
+        document.getElementById("infoR").innerHTML = "You set R = 4";
+    }
+    function changeR5(e) {
+        R = 5;
+        document.getElementById("infoR").innerHTML = "You set R = 5";
     }
 });

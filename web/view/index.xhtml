@@ -26,9 +26,12 @@
             <p>You only need to enter data and the program will do everything for you.</p>
         </div>
         <div class="program">
-            <canvas id="plot" width="300" height="300">
+            <div id="leftSide">
+                <canvas id="plot" width="300" height="300">
                 Canvas not supported
-            </canvas>
+                </canvas>
+                <div id="infoR">You don't set R yet..</div>
+            </div>
             <div class="form">
                 <h:form method="post" class="data-form" id="form" prependId="false">
                     <table cellpadding="10">
@@ -54,12 +57,12 @@
                         </tr>
                         <tr>
                             <th>Choose R: </th>
-                            <td>
-                                <h:commandButton class="button" value="1" type="button" action="1" />
-                                <h:commandButton class="button" value="2" type="button" action="2" />
-                                <h:commandButton class="button" value="3" type="button" action="3" />
-                                <h:commandButton class="button" value="4" type="button" action="4" />
-                                <h:commandButton class="button" value="5" type="button" action="5" />
+                            <td id="r">
+                                <h:commandButton id="r1" class="button" value="1" type="button" action="1" />
+                                <h:commandButton id="r2" class="button" value="2" type="button" action="2" />
+                                <h:commandButton id="r3" class="button" value="3" type="button" action="3" />
+                                <h:commandButton id="r4" class="button" value="4" type="button" action="4" />
+                                <h:commandButton id="r5" class="button" value="5" type="button" action="5" />
                             </td>
                         </tr>
                         <tr>
@@ -99,6 +102,7 @@
                 Clear results
             </div>
         </div>
+
     </div>
 </h:body>
 </html>

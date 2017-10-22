@@ -17,4 +17,5 @@ $(document).ready(function () {
     }
 
     updateClock();
+    document.getElementById("infoR")
 });
