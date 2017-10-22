@@ -23,9 +23,11 @@ body {
     width: 960px;
     margin: 0 auto 0;
     text-align: center;
-    padding-top: 20px;
     min-height: 500px;
     overflow: hidden;
+}
+#time {
+    padding: 10px;
 }
 
 #description {

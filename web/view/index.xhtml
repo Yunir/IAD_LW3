@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../styles/main.css"/>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
+    <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
     <script type="text/javascript" src="../scripts/validate.js"/>
     <script type="text/javascript" src="../scripts/interactiveImage.js"/>
     <script type="text/javascript" src="../scripts/graph.js"/>
+    <script type="text/javascript" src="../scripts/main.js"/>
 </h:head>
 <h:body>
     <div id="header">
@@ -17,6 +19,7 @@
         Web-service developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
     </div>
     <div id="content">
+        <div id="time"></div>
         <div id="description">
             <h1>What is helpSystems?</h1>
             <p>HelpSystems is a free service developed by some student to help another students successfully do their homework.</p>
@@ -27,7 +30,7 @@
                 Canvas not supported
             </canvas>
             <div class="form">
-                <h:form method="post" class="data-form" id="form">
+                <h:form method="post" class="data-form" id="form" prependId="false">
                     <table cellpadding="10">
                         <tr>
                             <th>Choose X:</th>
@@ -52,11 +55,11 @@
                         <tr>
                             <th>Choose R: </th>
                             <td>
-                                <h:commandButton class="button" value="1" type="submit" action="1" />
-                                <h:commandButton class="button" value="2" type="submit" action="2" />
-                                <h:commandButton class="button" value="3" type="submit" action="3" />
-                                <h:commandButton class="button" value="4" type="submit" action="4" />
-                                <h:commandButton class="button" value="5" type="submit" action="5" />
+                                <h:commandButton class="button" value="1" type="button" action="1" />
+                                <h:commandButton class="button" value="2" type="button" action="2" />
+                                <h:commandButton class="button" value="3" type="button" action="3" />
+                                <h:commandButton class="button" value="4" type="button" action="4" />
+                                <h:commandButton class="button" value="5" type="button" action="5" />
                             </td>
                         </tr>
                         <tr>
