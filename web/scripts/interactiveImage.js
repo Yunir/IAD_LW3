@@ -26,7 +26,7 @@ $(document).ready(function () {
                 code: 1
             };
             $.ajax({
-                url: 'http://localhost:8080/2labaIAD_war_exploded/WelcomeApp',
+                url: 'http://localhost:55755/IAD_LW3_war_exploded/check',
                 type: 'POST',
                 data: order,
                 error : function(data){

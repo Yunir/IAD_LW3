@@ -1,6 +1,6 @@
-package servletApp;
+package controller;
 
-import beans.StudentsBean;
+import model.StudentsBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!--<%@ page import="beans.StudentsBean" %>
-<%@ page import="java.util.ArrayList" %>-->
 <html xmlns:h="http://xmlns.jcp.org/jsf/html">
 <!--xmlns="http://www.w3.org/1999/xhtml"
 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -12,22 +10,22 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!--what is it-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="styles/main.css"/>
+    <link rel="stylesheet" href="../styles/main.css"/>
     <!--<%
     if(StudentsBean.sizeList()>0){
     %>
     <link rel="stylesheet" href="styles/block.css">
     <% } %>-->
-    <script type="text/javascript" src="scripts/jquery.min.js"/>
-    <script type="text/javascript" src="scripts/jquery.validate.min.js"/>
-    <script type="text/javascript" src="scripts/validate.js"/>
-    <script type="text/javascript" src="scripts/interactiveImage.js"/>
+    <script type="text/javascript" src="../scripts/jquery.min.js"/>
+    <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
+    <script type="text/javascript" src="../scripts/validate.js"/>
+    <script type="text/javascript" src="../scripts/interactiveImage.js"/>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"/>
 </h:head>
 <h:body>
     <div id="header">
         <div id="logo">
-            <img src="images/logo.png" alt="logo"/>
+            <img src="../images/logo.png" alt="logo"/>
         </div>
         <div id="about">
             WebSite developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
@@ -41,7 +39,7 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
         </div>
         <div class="program">
             <div id="dataimage">
-                <img id="graph" src="images/graph.jpg" alt="graph"/>
+                <img id="graph" src="../images/graph.jpg" alt="graph"/>
             </div>
             <div class="form">
                 <h:form method="post" class="data-form" id="myForm">
@@ -77,9 +75,9 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
         </div>
         <div id="refresh"/>
         <div class="result">
-            <!--<table id="results">
-                <tr><th>R</th><th>X</th><th>Y</th><th><%out.print(StudentsBean.sizeList());%></th></tr>
-                <%
+            <table id="results">
+                <tr><th>R</th><th>X</th><th>Y</th><th>#{StudentsBean.sizeList()}</th></tr>
+                <!--<%
                 if(StudentsBean.sizeList()>0) {
                 ArrayList<StudentsBean> list = StudentsBean.getList();
                 for (StudentsBean bean:list) {
@@ -93,8 +91,8 @@ xmlns:f="http://xmlns.jcp.org/jsf/core"-->
                 <%
                 }
                 }
-                %>
-            </table>-->
+                %>-->
+            </table>
             <div id="clear">
                 Clear
             </div>
