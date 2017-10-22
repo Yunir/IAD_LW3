@@ -14,7 +14,7 @@ public class ControllerServlet extends HttpServlet {
     private boolean correct=false;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("view/index.xhtml").include(request, response);
-    }//End doGet
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

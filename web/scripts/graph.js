@@ -96,7 +96,7 @@ $(document).ready(function(){
         x -= plot_canvas.offsetLeft ;
         y -= plot_canvas.offsetTop ;
     }
-    function changeR(ee) {
+    function changeR(e) {
         if (document.getElementById('r1').checked) {
             R = document.getElementById('r1').value;
         }

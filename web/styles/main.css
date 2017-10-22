@@ -2,32 +2,28 @@ body {
     background: #f2f4f6 url(../images/bg.jpg) 0 20px;
 }
 
-#logo {
-    margin-top: 17px;
-    width: 60%;
-    margin-left: 20%;
+#header {
+    width: 960px;
+    margin: 0 auto;
     text-align: center;
+    font: normal 12pt Monospace;
+    background-color: #dedede;
+    padding-bottom: 20px;
+    border-radius: 10px 10px 0 0;
 }
 
-#logo img {
+#header img {
     width: 100%;
     max-width: 200px;
     height: auto;
 }
 
-#about {
-    font: italic normal bold 12pt Arial;
-    width: 960px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 #content {
     background: #f2f4f6;
     width: 960px;
-    margin: 20px auto 0;
+    margin: 0 auto 0;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 20px;
     min-height: 500px;
     overflow: hidden;
 }
@@ -50,47 +46,37 @@ body {
 }
 
 .form {
-    margin-top: 25px;
-    text-align: center;
     float: right;
-    width: 50%;
-}
-
-.form input {
-    margin-bottom: 20px;
-    padding: 10px;
+    padding-top: 20px;
     font-family: "Roboto", sans-serif;
     font-size: 14px;
+    width: 50%;
+}
+.form table{
+    width: 100%;
 }
 
-#button {
-    margin-bottom: 50px;
+.form th {
+    text-align: right;
+}
+.form td {
+    text-align: left;
+}
+
+.button {
     text-decoration: none;
     text-align: center;
-    padding: 11px 32px;
+    padding: 5px 10px;
+    margin: 2px;
     border: solid 1px #004F72;
     border-radius: 4px;
-    font: 16px Arial, Helvetica, sans-serif;
-    font-weight: bold;
     color: #E5FFFF;
     background-color: #3BA4C7;
     box-shadow: 0 0 2px #bababa, inset 0 0 1px #ffffff;
 }
 
-#button:hover {
+.button:hover {
     background: #3B50C7;
-}
-
-#dataimage {
-    text-align: left;
-    float: left;
-    width: 50%;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-#code {
-    display: none;
 }
 
 #refresh {
@@ -112,7 +98,6 @@ body {
 }
 
 .result {
-
     overflow: hidden;
     display: none;
 }

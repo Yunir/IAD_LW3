@@ -4,7 +4,6 @@
 <h:head>
     <title>IAD_LW3</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <!--what is it-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../styles/main.css"/>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
@@ -14,12 +13,8 @@
 </h:head>
 <h:body>
     <div id="header">
-        <div id="logo">
-            <img src="../images/logo.png" alt="logo"/>
-        </div>
-        <div id="about">
-            WebSite developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
-        </div>
+        <img src="../images/logo.png" alt="logo"/><br/>
+        Web-service developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
     </div>
     <div id="content">
         <div id="description">
@@ -28,37 +23,49 @@
             <p>You only need to enter data and the program will do everything for you.</p>
         </div>
         <div class="program">
+            <canvas id="plot" width="300" height="300">
+                Canvas not supported
+            </canvas>
             <div class="form">
                 <h:form method="post" class="data-form" id="form">
-                    Choose X:
-                    <h:selectOneMenu value = "#{StudentsBean.enterX}">
-                        <f:selectItem itemValue = "enterX1" itemLabel = "-2"/>
-                        <f:selectItem itemValue = "enterX2" itemLabel = "-1.5"/>
-                        <f:selectItem itemValue = "enterX3" itemLabel = "-1"/>
-                        <f:selectItem itemValue = "enterX4" itemLabel = "-0.5"/>
-                        <f:selectItem itemValue = "enterX5" itemLabel = "0"/>
-                        <f:selectItem itemValue = "enterX6" itemLabel = "0.5"/>
-                        <f:selectItem itemValue = "enterX7" itemLabel = "1"/>
-                        <f:selectItem itemValue = "enterX8" itemLabel = "1.5"/>
-                        <f:selectItem itemValue = "enterX9" itemLabel = "2"/>
-                    </h:selectOneMenu>
-                    <br/>
-                    Write Y:
-                    <h:inputText id="enterY" name="enterY" title="y"/>
-                    <br/>
-                    <h:commandButton value="1" type="submit" action="1" />
-                    <h:commandButton value="2" type="submit" action="2" />
-                    <h:commandButton value="3" type="submit" action="3" />
-                    <h:commandButton value="4" type="submit" action="4" />
-                    <h:commandButton value="5" type="submit" action="5" />
-                    <br/>
-                    <input type="radio" id="code" name="code" value="1" checked="checked" title="rad"/>
-                    <input type="submit" value="Calculate" id="button"/>
+                    <table cellpadding="10">
+                        <tr>
+                            <th>Choose X:</th>
+                            <td>
+                                <h:selectOneMenu value = "#{StudentsBean.enterX}">
+                                    <f:selectItem itemValue = "enterX1" itemLabel = "-2"/>
+                                    <f:selectItem itemValue = "enterX2" itemLabel = "-1.5"/>
+                                    <f:selectItem itemValue = "enterX3" itemLabel = "-1"/>
+                                    <f:selectItem itemValue = "enterX4" itemLabel = "-0.5"/>
+                                    <f:selectItem itemValue = "enterX5" itemLabel = "0"/>
+                                    <f:selectItem itemValue = "enterX6" itemLabel = "0.5"/>
+                                    <f:selectItem itemValue = "enterX7" itemLabel = "1"/>
+                                    <f:selectItem itemValue = "enterX8" itemLabel = "1.5"/>
+                                    <f:selectItem itemValue = "enterX9" itemLabel = "2"/>
+                                </h:selectOneMenu>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Write Y:</th>
+                            <td><h:inputText id="enterY" name="enterY" title="y"/></td>
+                        </tr>
+                        <tr>
+                            <th>Choose R: </th>
+                            <td>
+                                <h:commandButton class="button" value="1" type="submit" action="1" />
+                                <h:commandButton class="button" value="2" type="submit" action="2" />
+                                <h:commandButton class="button" value="3" type="submit" action="3" />
+                                <h:commandButton class="button" value="4" type="submit" action="4" />
+                                <h:commandButton class="button" value="5" type="submit" action="5" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type="submit" value="Calculate" class="button"/></td>
+                        </tr>
+                    </table>
                 </h:form>
             </div>
-            <canvas id="plot" width="300" height="300">
-                Canvas not support
-            </canvas>
         </div>
         <div id="refresh"/>
         <div class="result">
