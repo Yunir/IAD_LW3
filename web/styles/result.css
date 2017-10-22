@@ -23,19 +23,17 @@ body{
 	display:block;
 	background: #f2f4f6;
 	width: 960px;
-	margin: 0 auto;
-	margin-top: 20px;
+	margin: 20px auto 0;
 	text-align: center;
 	padding-top: 30px;
 }
 .program{
 	overflow: hidden;
 	width: 80%;
-	margin: 0 auto;
-	margin-top:20px;
+	margin: 20px auto 0;
 }
 #result{
-	margin: 0px;
+	margin: 0;
 	text-align: center;
 	float: right;
 	width: 50%;
@@ -56,7 +54,7 @@ body{
  	font-weight:bold; 
  	color:#E5FFFF; 
  	background-color:#3BA4C7;  
- 	box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;  
+ 	box-shadow:0 0 2px #bababa, inset 0 0 1px #ffffff;
 }
 #button:hover{
  	background: #3B50C7;
@@ -99,7 +97,7 @@ td{
     	width: 748px;
 	}
 	#result{
-		margin-top:0px;
+		margin-top:0;
 	}
 	#result h1{
 		margin-bottom: 0; 

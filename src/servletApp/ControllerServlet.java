@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class WelcomeServlet extends HttpServlet {
+public class ControllerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private boolean correct=false;
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
