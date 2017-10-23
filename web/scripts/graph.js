@@ -6,7 +6,7 @@ $(document).ready(function(){
     plot_context.lineTo(150, 150);
     plot_context.closePath();
     plot_context.rect(50, 150, 100, 50);
-    plot_context.fillStyle = 'red';
+    plot_context.fillStyle = '#3BA4C7';
     plot_context.fill();
     plot_context.beginPath();
     plot_context.moveTo(150, 150);
@@ -14,7 +14,7 @@ $(document).ready(function(){
     plot_context.lineTo(200, 150);
     plot_context.lineTo(150, 150);
     plot_context.closePath();
-    plot_context.fillStyle = 'red';
+    plot_context.fillStyle = '#3BA4C7';
     plot_context.fill();
     plot_context.beginPath();
     //Ox
@@ -56,11 +56,11 @@ $(document).ready(function(){
             y *= -1;
             x = x/100*R;
             y = y/100*R;
-            alert(x + " " + y);
+            //alert(x + " " + y);
             $.ajax({
                 type:'post',//тип запроса: get,post либо head
-                url:'controller',//url адрес файла обработчика
-                data:{'x55':x, 'y':y, 'r':R},//параметры запроса
+                url:'http://localhost:55755/IAD_LW3_war_exploded/control',//url адрес файла обработчика
+                data:{'enterX':x, 'enterY':y, 'enterR':R},//параметры запроса
                 response:'text',//тип возвращаемого ответа text либо xml
                 error: function (message) {
                     console.log(message);
