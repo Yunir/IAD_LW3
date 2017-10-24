@@ -11,37 +11,39 @@
         <servlet-name>servletExe</servlet-name>
         <url-pattern>/WelcomeApp</url-pattern>
     </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>view/index.xhtml</welcome-file>
+    </welcome-file-list>
+
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+
     <servlet>
-        <servlet-name>servletExe2</servlet-name>
-        <servlet-class>servletApp.AreaCheckServlet</servlet-class>
+        <servlet-name>controller</servlet-name>
+        <servlet-class>controller.ControllerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>servletExe2</servlet-name>
-        <url-pattern>/WEB-INF/AreaCheckApp</url-pattern>
+        <servlet-name>controller</servlet-name>
+        <url-pattern>/control</url-pattern>
     </servlet-mapping>
+
     <servlet>
-        <servlet-name>servletExe3</servlet-name>
-        <servlet-class>servletApp.ClearServlet</servlet-class>
+        <servlet-name>checker</servlet-name>
+        <servlet-class>controller.AreaCheckServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>servletExe3</servlet-name>
-        <url-pattern>/WEB-INF/ClearApp</url-pattern>
+        <servlet-name>checker</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cleaner</servlet-name>
+        <servlet-class>controller.ClearServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cleaner</servlet-name>
+        <url-pattern>/clear</url-pattern>
     </servlet-mapping>
 </web-app>
-
-<!--
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
-<servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-    <load-on-startup>1</load-on-startup>
-</servlet>
-<servlet-mapping>
-    <servlet-name>Faces Servlet</servlet-name>
-    <url-pattern>*.xhtml</url-pattern>
-</servlet-mapping>
-</web-app>-->

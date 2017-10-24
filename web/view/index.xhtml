@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" >
+<f:view>
+    <h:head>
+        <title>IAD_LW3</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
+        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
+        <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
+        <script type="text/javascript" src="../scripts/validate.js"/>
+        <script type="text/javascript" src="../scripts/interactiveImage.js"/>
+        <script type="text/javascript" src="../scripts/graph.js"/>
+        <script type="text/javascript" src="../scripts/main.js"/>
+    </h:head>
+
+    <h:body>
+        <div id="header">
+            <img src="../images/logo.png" alt="logo"/><br/>
+            Web-service developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
+        </div>
+        <div id="content">
+            <div id="time"/>
+            <div id="description">
+                <h1>What is helpSystems?</h1>
+                <p>HelpSystems is a free service developed by some student to help another students successfully do their homework.</p>
+                <p>You only need to enter data and the program will do everything for you.</p>
+                <h:form>
+                    <p:commandButton value="GO to main software API" action="toMain"/>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</f:view>
+</html>

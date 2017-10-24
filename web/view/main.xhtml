@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<f:view>
+    <h:head>
+        <title>IAD_LW3</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../styles/main.css"/>
+        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
+        <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
+        <script type="text/javascript" src="../scripts/validate.js"/>
+        <script type="text/javascript" src="../scripts/interactiveImage.js"/>
+        <script type="text/javascript" src="../scripts/graph.js"/>
+        <script type="text/javascript" src="../scripts/main.js"/>
+    </h:head>
+    <h:body>
+        <div id="header">
+            <img src="../images/logo.png" alt="logo"/><br/>
+            Web-service developed by Promotorov Vlad and Salimzyanov Yunir from P3211. Variant 371.
+        </div>
+        <div id="content">
+            <div id="time"/>
+            <div id="description">
+                <h1>What is helpSystems?</h1>
+                <p>HelpSystems is a free service developed by some student to help another students successfully do their homework.</p>
+                <p>You only need to enter data and the program will do everything for you.</p>
+            </div>
+            <div class="program">
+                <div id="leftSide">
+                    <h:form id="canvaForm">
+                        <h:inputHidden id="canvaX" value="#{StudentsBean.enterX}" />
+                        <h:inputHidden id="canvaY" value="#{StudentsBean.enterY}" />
+                        <canvas id="plot" width="300" height="300" onclick="getVars()">
+                            Canvas not supported
+                        </canvas>
+                        <p:remoteCommand name="canvaReady" action="#{StudentsBean.addToList}" update=":resultss" />
+                    </h:form>
+                    <div id="infoR">You don't set R yet..</div>
+                    <div id="results1"/>
+                </div>
+                <div class="form">
+                    <h:form method="post" class="data-form" id="form" prependId="false">
+                        <table cellpadding="10">
+                            <tr>
+                                <th>Choose X:</th>
+                                <td>
+                                    <h:selectOneMenu value = "#{StudentsBean.enterX}">
+                                        <f:selectItem itemValue = "enterX1" itemLabel = "-2"/>
+                                        <f:selectItem itemValue = "enterX2" itemLabel = "-1.5"/>
+                                        <f:selectItem itemValue = "enterX3" itemLabel = "-1"/>
+                                        <f:selectItem itemValue = "enterX4" itemLabel = "-0.5"/>
+                                        <f:selectItem itemValue = "enterX5" itemLabel = "0"/>
+                                        <f:selectItem itemValue = "enterX6" itemLabel = "0.5"/>
+                                        <f:selectItem itemValue = "enterX7" itemLabel = "1"/>
+                                        <f:selectItem itemValue = "enterX8" itemLabel = "1.5"/>
+                                        <f:selectItem itemValue = "enterX9" itemLabel = "2"/>
+                                    </h:selectOneMenu>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Write Y:</th>
+                                <td><h:inputText value = "#{StudentsBean.enterY}" id="enterY" name="enterY" title="y"/></td>
+                            </tr>
+                            <tr>
+                                <th>Choose R: </th>
+                                <td id="r">
+                                    <h:commandButton  id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r2" class="button" value="2" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r4" class="button" value="4" action="#{StudentsBean.defineR(4)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r5" class="button" value="5" action="#{StudentsBean.defineR(5)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td><h:commandButton value="Check" action="#{StudentsBean.addToList}" class="button"/></td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </div>
+            </div>
+            <div id="refresh"/>
+            <h:form>
+                <p:commandButton value="Return to Start Menu" action="toIndex"/>
+            </h:form>
+            <div class="result">
+                <table id="results">
+                    <tr>
+                        <th>R</th>
+                        <th>X</th>
+                        <th>Y</th>
+                        <th><!--TODO: here we need to get size--></th>
+                    </tr>
+                    <!--<%
+                    if(StudentsBean.sizeList()>0) {
+                    ArrayList<StudentsBean> list = StudentsBean.getList();
+                    for (StudentsBean bean:list) {
+                    %>
+                    <tr>
+                        <td><% out.print(bean.getEnterR()); %></td>
+                        <td><% out.print(bean.getEnterX()); %></td>
+                        <td><% out.print(bean.getEnterY()); %></td>
+                        <td><% out.print(bean.getResult()); %></td>
+                    </tr>
+                    <%
+                    }
+                    }
+                    %>-->
+                </table>
+                <div id="clear">
+                    Clear results
+                </div>
+            </div>
+            <h:dataTable value="#{StudentsBean.getHitsList()}" var="c"
+                         styleClass="order-table"
+                         headerClass="order-table-header"
+                         rowClasses="order-table-odd-row,order-table-even-row"
+                         id="resultss"
+            >
+
+                <h:column>
+                    <f:facet name="header">
+                        X
+                    </f:facet>
+                    #{c.x}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Y
+                    </f:facet>
+                    #{c.y}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        R
+                    </f:facet>
+                    #{c.r}
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        Answer
+                    </f:facet>
+                    #{c.res}
+                </h:column>
+
+            </h:dataTable>
+        </div>
+    </h:body>
+</f:view>
+</html>
