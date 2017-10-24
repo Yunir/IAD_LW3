@@ -17,7 +17,9 @@ public class AreaCheckServlet extends HttpServlet {
             double enterX=(double)req.getAttribute("enterX");
             double enterY=(double)req.getAttribute("enterY");
             double r=(double)req.getAttribute("enterR");
+            //System.out.println(enterX + " " + enterY + " " + r);
             boolean isInArea=checkArea(enterX, enterY, r);
+            System.out.println(isInArea);
             req.setAttribute("enterX", enterX);
             req.setAttribute("enterY", enterY);
             req.setAttribute("enterR", r);
@@ -34,15 +36,14 @@ public class AreaCheckServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
-    protected boolean checkArea(double x, double y, double r){
-        //TODO: change parameters
-        if(x<=0 && y>=0 && Math.abs(x)<=Math.abs(r) && Math.abs(y)<=Math.abs(r)){
+    private boolean checkArea(double x, double y, double r){
+        if(x >= 0 && y >= 0 && x <= r && y <= (r/2)){
             return true;
         }
-        else if(x>=0 && y<=0 && r>=Math.sqrt(y*y+x*x)){
+        else if(x >= 0 && y <= 0 && y >= (x-(r/2))){
             return true;
         }
-        else if(x>=-r/2 && x<=0 && y>=-r && y<=0 && y>=-2*x-2){
+        else if (x <= 0 && y >= 0 && (r/2) >= Math.sqrt(y*y+x*x)){
             return true;
         }
         else return false;

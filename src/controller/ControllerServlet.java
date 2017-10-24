@@ -19,41 +19,20 @@ public class ControllerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            PrintWriter writer=response.getWriter();
-            String[] enterX = request.getParameterValues("enterX");
-            String[] enterY = request.getParameterValues("enterY");
-            String[] R = request.getParameterValues("enterR");
-            double x = 0;
-            double y = 0;
-            double r = 0;
-            if (enterX.length != 1 || enterY.length != 1 || R.length != 1) {
-                correct = false;
-            } else {
-                x = round(Double.parseDouble(enterX[0]), 2);
-                y = round(Double.parseDouble(enterY[0]), 2);
-                r = round(Double.parseDouble(R[0]), 2);
-                if (x >= -2 && x <= 2 && y >= -5 && y <= 5 && r >= 1 && r <= 5) correct = true;
-                else correct = false;
-            }
-            if (!correct) {
-                request.getRequestDispatcher("view/main.xhtml").forward(request, response);
-            } else {
-                request.setAttribute("enterX", x);
-                request.setAttribute("enterY", y);
-                request.setAttribute("enterR", r);
-                request.getRequestDispatcher("/check").forward(request, response);
-            }
+            String enterX = request.getParameter("enterX");
+            String enterY = request.getParameter("enterY");
+            String R = request.getParameter("enterR");
+            double x = Double.parseDouble(enterX);
+            double y = Double.parseDouble(enterY);
+            double r = Double.parseDouble(R);
+            //System.out.println(x + " " + y + " " + r);
+            request.setAttribute("enterX", x);
+            request.setAttribute("enterY", y);
+            request.setAttribute("enterR", r);
+            request.getRequestDispatcher("/check").forward(request, response);
         }
         catch(Exception exception) {
-            request.getRequestDispatcher("/view/main.xhtml").forward(request, response);
+            System.out.println("WE HAVE SOME PROBLEMS, Huston!?");
         }
-    }
-    private double round(double value, int places) {
-        if (places < 0) throw new IllegalArgumentException();
-
-        long factor = (long) Math.pow(10, places);
-        value = value * factor;
-        long tmp = Math.round(value);
-        return (double) tmp / factor;
     }
 }

@@ -56,30 +56,20 @@ $(document).ready(function(){
             y *= -1;
             x = x/100*R;
             y = y/100*R;
-            //alert(x + " " + y);
+            //alert(x + " " + y + " " + R);
             $.ajax({
-                type:'post',//тип запроса: get,post либо head
+                type:'post',
                 url:'http://localhost:55755/IAD_LW3_war_exploded/control',//url адрес файла обработчика
                 data:{'enterX':x, 'enterY':y, 'enterR':R},//параметры запроса
                 response:'text',//тип возвращаемого ответа text либо xml
                 error: function (message) {
                     console.log(message);
-                    $('#results1').text(message);
+                    $('#results1').text("All is bad!");
                     alert("Error " + message);
                 },
-                success:function (data) {//возвращаемый результат от сервера
-                    console.log(data);
-                    $('#results1').html(data);
-                    /*$("#if").attr(
-                        "src", "data:text/html;charset=utf-8," + data
-                    );*/
-                    ifr =   document.getElementById('if').contentDocument;
-                    ifr.open();
-                    ifr.writeln(data);
-                    ifr.close();
-                    //$('#if').html(data);
-                    /*alert("Correct " + message);
-                    $$('result',$$('result').innerHTML+'<br />'+data);*/
+                success:function (data) {
+                    $('#results1').html("All is good!");
+                    //alert(data);
                 }
             });
         }

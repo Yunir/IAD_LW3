@@ -59,16 +59,16 @@
                         </tr>
                         <tr>
                             <th>Write Y:</th>
-                            <td><h:inputText id="enterY" name="enterY" title="y"/></td>
+                            <td><h:inputText value = "#{StudentsBean.enterY}" id="enterY" name="enterY" title="y"/></td>
                         </tr>
                         <tr>
                             <th>Choose R: </th>
                             <td id="r">
-                                <h:commandButton id="r1" class="button" value="1" type="button" action="1" />
-                                <h:commandButton id="r2" class="button" value="2" type="button" action="2" />
-                                <h:commandButton id="r3" class="button" value="3" type="button" action="3" />
-                                <h:commandButton id="r4" class="button" value="4" type="button" action="4" />
-                                <h:commandButton id="r5" class="button" value="5" type="button" action="5" />
+                                <h:commandButton  id="r1" class="button" value="1" type="button" action="#{StudentsBean.enterR}"/>
+                                <h:commandButton id="r2" class="button" value="2" type="button" action="#{StudentsBean.enterR}" />
+                                <h:commandButton id="r3" class="button" value="3" type="button" action="#{StudentsBean.enterR}" />
+                                <h:commandButton id="r4" class="button" value="4" type="button" action="#{StudentsBean.enterR}" />
+                                <h:commandButton id="r5" class="button" value="5" type="button" action="#{StudentsBean.enterR}" />
                             </td>
                         </tr>
                         <tr>
@@ -80,6 +80,9 @@
             </div>
         </div>
         <div id="refresh"/>
+        <h:form>
+            <p:commandButton value="Return to Start Menu" action="toIndex"/>
+        </h:form>
         <div class="result">
             <table id="results">
                 <tr>
@@ -110,11 +113,6 @@
         </div>
 
     </div>
-    <h:form>
-        <p:panel header="PrimeFaces Components">
-            <p:commandButton value="GO to main software API" action="toIndex"/>
-        </p:panel>
-    </h:form>
 </h:body>
 </f:view>
 </html>
