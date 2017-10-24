@@ -10,9 +10,9 @@ public class ClearServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //TODO: replace with JDBC cleaner
-        /*int k=StudentBean.getList().size();
+        /*int k=StudentsBean.getList().size();
         for(int i=0; i< k; i++){
-            StudentBean.getList().remove(0);
+            StudentsBean.getList().remove(0);
         }*/
     }
 }

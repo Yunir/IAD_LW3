@@ -1,6 +1,6 @@
 package controller;
 
-import model.StudentBean;
+import model.StudentsBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +25,7 @@ public class AreaCheckServlet extends HttpServlet {
             req.setAttribute("enterY", enterY);
             req.setAttribute("enterR", r);
             req.setAttribute("isInArea", isInArea);
-            StudentBean bean = new StudentBean();
+            StudentsBean bean = new StudentsBean();
             //TODO FIX IT!!
             /*bean.setEnterR(String.valueOf(r));
             bean.setEnterX(String.valueOf(enterX));

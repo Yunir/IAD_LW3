@@ -71,7 +71,7 @@
                             </tr>
                             <tr>
                                 <th></th>
-                                <td><input type="submit" value="Calculate" class="button"/></td>
+                                <td><h:commandButton value="Check" action="#{StudentsBean.addToList}" class="button"/></td>
                             </tr>
                         </table>
                     </h:form>
@@ -90,9 +90,9 @@
                         <th><!--TODO: here we need to get size--></th>
                     </tr>
                     <!--<%
-                    if(StudentBean.sizeList()>0) {
-                    ArrayList<StudentBean> list = StudentBean.getList();
-                    for (StudentBean bean:list) {
+                    if(StudentsBean.sizeList()>0) {
+                    ArrayList<StudentsBean> list = StudentsBean.getList();
+                    for (StudentsBean bean:list) {
                     %>
                     <tr>
                         <td><% out.print(bean.getEnterR()); %></td>
@@ -109,7 +109,7 @@
                     Clear results
                 </div>
             </div>
-            <h:dataTable value="#{Students.getHitsList()}" var="c"
+            <h:dataTable value="#{StudentsBean.getHitsList()}" var="c"
                          styleClass="order-table"
                          headerClass="order-table-header"
                          rowClasses="order-table-odd-row,order-table-even-row"

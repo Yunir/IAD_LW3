@@ -13,10 +13,10 @@
             <tr><th>R</th><th>X</th><th>Y</th><th>Result</th></tr>
             <tr>
                 <%
-                StudentBean bean;
-                if(StudentBean.sizeList()>0) bean=StudentBean.getList().get(StudentBean.getList().size()-1);
+                StudentsBean bean;
+                if(StudentsBean.sizeList()>0) bean=StudentsBean.getList().get(StudentsBean.getList().size()-1);
                 else{
-                bean=new StudentBean();
+                bean=new StudentsBean();
                 bean.setEnterR("Nothing");
                 bean.setEnterY("Nothing");
                 bean.setEnterX("Nothing");
