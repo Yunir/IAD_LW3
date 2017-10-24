@@ -117,12 +117,15 @@ public class StudentsBean implements Serializable {
         try{
             System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + discryptX(enterX) + " " + enterY + " " + enterR + " " + result);
             connection = getConnection();
+            double xx = discryptX(enterX);
+            double yy = Double.parseDouble(enterY);
+            int rr = Integer.parseInt(enterR);
             PreparedStatement stmt = connection.prepareStatement(
                     "INSERT INTO hit_to_graph(user_id, x, y, r, answer) values(1, ?, ?, ?, ?)");
-            stmt.setDouble(1, discryptX(enterX));
-            stmt.setDouble(2, Double.parseDouble(enterY));
-            stmt.setInt(3, Integer.parseInt(enterR));
-            stmt.setBoolean(4, Boolean.parseBoolean(result));
+            stmt.setDouble(1, xx);
+            stmt.setDouble(2, yy);
+            stmt.setInt(3, rr);
+            stmt.setBoolean(4, checkArea(xx, yy, rr));
             resultt = stmt.executeUpdate();
             connection.close();
         }catch(Exception e){
@@ -154,5 +157,42 @@ public class StudentsBean implements Serializable {
             default:
                 return 0;
         }
+    }
+
+    public void defineR(int i) {
+        switch(i) {
+            case 1:
+                enterR = 1 + "";
+                break;
+            case 2:
+                enterR = 2 + "";
+                break;
+            case 3:
+                enterR = 3 + "";
+                break;
+            case 4:
+                enterR = 4 + "";
+                break;
+            case 5:
+                enterR = 5 + "";
+                break;
+            default:
+                enterR = 1 + "";
+                break;
+        }
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + enterR);
+    }
+
+    private boolean checkArea(double x, double y, int r){
+        if(x >= 0 && y >= 0 && x <= r && y <= (r/2)){
+            return true;
+        }
+        else if(x >= 0 && y <= 0 && y >= (x-(r/2))){
+            return true;
+        }
+        else if (x <= 0 && y >= 0 && (r/2) >= Math.sqrt(y*y+x*x)){
+            return true;
+        }
+        else return false;
     }
 }

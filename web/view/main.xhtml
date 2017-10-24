@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui" >
+      xmlns:p="http://primefaces.org/ui">
 <f:view>
     <h:head>
         <title>IAD_LW3</title>
@@ -62,11 +62,11 @@
                             <tr>
                                 <th>Choose R: </th>
                                 <td id="r">
-                                    <h:commandButton  id="r1" class="button" value="1" type="button" action="#{StudentsBean.enterR}"/>
-                                    <h:commandButton id="r2" class="button" value="2" type="button" action="#{StudentsBean.enterR}" />
-                                    <h:commandButton id="r3" class="button" value="3" type="button" action="#{StudentsBean.enterR}" />
-                                    <h:commandButton id="r4" class="button" value="4" type="button" action="#{StudentsBean.enterR}" />
-                                    <h:commandButton id="r5" class="button" value="5" type="button" action="#{StudentsBean.enterR}" />
+                                    <h:commandButton  id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r2" class="button" value="2" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r4" class="button" value="4" action="#{StudentsBean.defineR(4)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r5" class="button" value="5" action="#{StudentsBean.defineR(5)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
                                 </td>
                             </tr>
                             <tr>
