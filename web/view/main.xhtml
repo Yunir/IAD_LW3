@@ -30,9 +30,14 @@
             </div>
             <div class="program">
                 <div id="leftSide">
-                    <canvas id="plot" width="300" height="300">
-                        Canvas not supported
-                    </canvas>
+                    <h:form id="canvaForm">
+                        <h:inputHidden id="canvaX" value="#{StudentsBean.enterX}" />
+                        <h:inputHidden id="canvaY" value="#{StudentsBean.enterY}" />
+                        <canvas id="plot" width="300" height="300" onclick="getVars()">
+                            Canvas not supported
+                        </canvas>
+                        <p:remoteCommand name="canvaReady" action="#{StudentsBean.addToList}" update=":resultss" />
+                    </h:form>
                     <div id="infoR">You don't set R yet..</div>
                     <div id="results1"/>
                 </div>
@@ -113,6 +118,7 @@
                          styleClass="order-table"
                          headerClass="order-table-header"
                          rowClasses="order-table-odd-row,order-table-even-row"
+                         id="resultss"
             >
 
                 <h:column>

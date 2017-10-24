@@ -42,6 +42,7 @@ $(document).ready(function(){
     document.getElementById("r4").addEventListener("click", changeR4, false);
     document.getElementById("r5").addEventListener("click", changeR5, false);
     plot_canvas.addEventListener("click", drawPoint, false);
+
     function drawPoint(e) {
         if(R == '-1') {
             alert("Выберите какое-нибудь значение R");
@@ -57,6 +58,10 @@ $(document).ready(function(){
             x = x/100*R;
             y = y/100*R;
             //alert(x + " " + y + " " + R);
+            document.getElementById("canvaForm:canvaX").value = x;
+            document.getElementById("canvaForm:canvaY").value = y;
+            //alert(document.getElementById("canvaForm:canvaX").value + " " + document.getElementById("canvaForm:canvaY").value);
+            canvaReady();
             $.ajax({
                 type:'post',
                 url:'http://localhost:55755/IAD_LW3_war_exploded/control',//url адрес файла обработчика
@@ -69,7 +74,7 @@ $(document).ready(function(){
                 },
                 success:function (data) {
                     $('#results1').html("All is good!");
-                    alert(data);
+                    //alert(data);
                 }
             });
         }

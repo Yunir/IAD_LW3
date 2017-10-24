@@ -155,7 +155,7 @@ public class StudentsBean implements Serializable {
             case "enterX9":
                 return 2;
             default:
-                return 0;
+                return Double.parseDouble(x);
         }
     }
 
@@ -183,16 +183,23 @@ public class StudentsBean implements Serializable {
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + enterR);
     }
 
-    private boolean checkArea(double x, double y, int r){
-        if(x >= 0 && y >= 0 && x <= r && y <= (r/2)){
+    private boolean checkArea(double x, double y, double r){
+        System.out.println(x + " " + y + " " + r + " " + (x >= 0 && y >= 0) + (x <= r) + (y <= (r/2)) + " " + y + " " + r/2);
+        if((x >= 0 && y >= 0) && (x <= r) && (y <= (r/2))){
+            System.out.println("1st! rectangle!");
             return true;
         }
         else if(x >= 0 && y <= 0 && y >= (x-(r/2))){
+            System.out.println("2nd! triangle!");
             return true;
         }
         else if (x <= 0 && y >= 0 && (r/2) >= Math.sqrt(y*y+x*x)){
+            System.out.println("3rd! circle!");
             return true;
         }
-        else return false;
+        else {
+            System.out.println("Why there's mistake?!");
+            return false;
+        }
     }
 }
