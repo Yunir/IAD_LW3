@@ -50,13 +50,14 @@ $(document).ready(function(){
             var cell = getCursorPosition(e);
             plot_context.beginPath();
             plot_context.rect(x, y, 5, 5);
-            plot_context.fillStyle = 'yellow';
-            plot_context.fill();
             x -= 150;
             y -= 150;
             y *= -1;
             x = x/100*R;
             y = y/100*R;
+            plot_context.fillStyle = 'gray';
+            if (checkArea(x, y, R) == 1) plot_context.fillStyle = 'white';
+            plot_context.fill();
             //alert(x + " " + y + " " + R);
             document.getElementById("canvaForm:canvaX").value = x;
             document.getElementById("canvaForm:canvaY").value = y;
@@ -79,6 +80,23 @@ $(document).ready(function(){
             });
         }
     }
+
+    function checkArea(x, y, r){
+        //alert(x + " " + y + " " + r + " " + (x >= 0 && y >= 0) + (x <= r) + (y <= (r/2)) + " " + y + " " + r/2);
+        if((x >= 0 && y >= 0) && (x <= r) && (y <= (r/2))){
+            return 1;
+        }
+        else if(x >= 0 && y <= 0 && y >= (x-(r/2))){
+            return 1;
+        }
+        else if (x <= 0 && y >= 0 && (r/2) >= Math.sqrt(y*y+x*x)){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+
     function getCursorPosition(e) {
         if (e.pageX != undefined && e.pageY != undefined) {
             x = e.pageX;
