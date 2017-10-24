@@ -1,6 +1,6 @@
 package controller;
 
-import model.StudentsBean;
+import model.StudentBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,23 +19,25 @@ public class AreaCheckServlet extends HttpServlet {
             double r=(double)req.getAttribute("enterR");
             //System.out.println(enterX + " " + enterY + " " + r);
             boolean isInArea=checkArea(enterX, enterY, r);
-            System.out.println(isInArea);
+            //System.out.println(isInArea);
+            //TODO: replace with JDBC storage
             req.setAttribute("enterX", enterX);
             req.setAttribute("enterY", enterY);
             req.setAttribute("enterR", r);
             req.setAttribute("isInArea", isInArea);
-            StudentsBean bean=new StudentsBean();
-            bean.setEnterR(String.valueOf(r));
+            StudentBean bean = new StudentBean();
+            //TODO FIX IT!!
+            /*bean.setEnterR(String.valueOf(r));
             bean.setEnterX(String.valueOf(enterX));
             bean.setEnterY(String.valueOf(enterY));
-            bean.setResult(String.valueOf(isInArea));
-            //resp.sendRedirect("http://localhost:8080/2labaIAD_war_exploded/answer.jsp");
+            bean.setResult(String.valueOf(isInArea));*/
             req.getRequestDispatcher("view/answer.xhtml").forward(req,resp);
         }
         catch (Exception e){
             e.printStackTrace();
         }
     }
+
     private boolean checkArea(double x, double y, double r){
         if(x >= 0 && y >= 0 && x <= r && y <= (r/2)){
             return true;

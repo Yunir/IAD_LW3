@@ -69,7 +69,7 @@ $(document).ready(function(){
                 },
                 success:function (data) {
                     $('#results1').html("All is good!");
-                    //alert(data);
+                    alert(data);
                 }
             });
         }

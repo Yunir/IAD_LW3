@@ -1,7 +1,5 @@
 package controller;
 
-import model.StudentsBean;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,9 +9,10 @@ import java.io.IOException;
 public class ClearServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int k=StudentsBean.getList().size();
+        //TODO: replace with JDBC cleaner
+        /*int k=StudentBean.getList().size();
         for(int i=0; i< k; i++){
-            StudentsBean.getList().remove(0);
-        }
+            StudentBean.getList().remove(0);
+        }*/
     }
 }
