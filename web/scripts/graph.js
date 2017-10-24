@@ -2,15 +2,15 @@ $(document).ready(function(){
     var plot_canvas = document.getElementById("plot");
     var plot_context = plot_canvas.getContext("2d");
     plot_context.beginPath();
-    plot_context.arc(150, 150, 100, 0, Math.PI/2);
+    plot_context.arc(150, 150, 50, Math.PI, 3*Math.PI/2);
     plot_context.lineTo(150, 150);
     plot_context.closePath();
-    plot_context.rect(50, 150, 100, 50);
+    plot_context.rect(150, 100, 100, 50);
     plot_context.fillStyle = '#3BA4C7';
     plot_context.fill();
     plot_context.beginPath();
     plot_context.moveTo(150, 150);
-    plot_context.lineTo(150, 100);
+    plot_context.lineTo(150, 200);
     plot_context.lineTo(200, 150);
     plot_context.lineTo(150, 150);
     plot_context.closePath();

@@ -35,6 +35,7 @@ public class AreaCheckServlet extends HttpServlet {
         }
     }
     protected boolean checkArea(double x, double y, double r){
+        //TODO: change parameters
         if(x<=0 && y>=0 && Math.abs(x)<=Math.abs(r) && Math.abs(y)<=Math.abs(r)){
             return true;
         }
