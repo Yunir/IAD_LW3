@@ -82,6 +82,12 @@ body {
     box-shadow: 0 0 2px #bababa, inset 0 0 1px #ffffff;
 }
 
+#resultss {
+    width: 100%;
+    margin: 20px;
+    padding: 5px;
+}
+
 .button:hover {
     background: #3B50C7;
 }
