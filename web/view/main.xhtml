@@ -67,10 +67,7 @@
                             <tr>
                                 <th>Choose R: </th>
                                 <td id="r">
-                                    <!--<h:commandButton id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r2" class="button" value="2" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>-->
+                                    <!--<h:commandButton id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>-->
                                     <h:commandButton id="r1" class="button" value="1" type="button"/>
                                     <h:commandButton id="r2" class="button" value="2" type="button"/>
                                     <h:commandButton id="r3" class="button" value="3" type="button"/>
@@ -91,34 +88,6 @@
             <h:form>
                 <p:commandButton value="Return to Start Menu" action="toIndex"/>
             </h:form>
-            <div class="result">
-                <table id="results">
-                    <tr>
-                        <th>R</th>
-                        <th>X</th>
-                        <th>Y</th>
-                        <th><!--TODO: here we need to get size--></th>
-                    </tr>
-                    <!--<%
-                    if(StudentsBean.sizeList()>0) {
-                    ArrayList<StudentsBean> list = StudentsBean.getList();
-                    for (StudentsBean bean:list) {
-                    %>
-                    <tr>
-                        <td><% out.print(bean.getEnterR()); %></td>
-                        <td><% out.print(bean.getEnterX()); %></td>
-                        <td><% out.print(bean.getEnterY()); %></td>
-                        <td><% out.print(bean.getResult()); %></td>
-                    </tr>
-                    <%
-                    }
-                    }
-                    %>-->
-                </table>
-                <div id="clear">
-                    Clear results
-                </div>
-            </div>
             <h:dataTable value="#{StudentsBean.getHitsList()}" var="c"
                          styleClass="order-table"
                          headerClass="order-table-header"

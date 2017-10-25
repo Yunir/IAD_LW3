@@ -59,8 +59,8 @@ $(document).ready(function(){
             x -= 150;
             y -= 150;
             y *= -1;
-            x = x/100*R;
-            y = y/100*R;
+            x = x/100*5;
+            y = y/100*5;
             plot_context.fillStyle = 'gray';
             if (checkArea(x, y, R) == 1) plot_context.fillStyle = 'white';
             plot_context.fill();
