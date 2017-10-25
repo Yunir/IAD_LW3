@@ -100,47 +100,47 @@ $(document).ready(function(){
     function changeR1(e) {
         R = 1;
         document.getElementById("disr").value = R;
-        drawCanva();
+        drawCanva(1);
         document.getElementById("infoR").innerHTML = "You set R = 1";
     }
     function changeR2(e) {
         R = 2;
         document.getElementById("disr").value = R;
-        drawCanva();
+        drawCanva(2);
         document.getElementById("infoR").innerHTML = "You set R = 2";
     }
     function changeR3(e) {
         R = 3;
         document.getElementById("disr").value = R;
-        drawCanva();
+        drawCanva(3);
         document.getElementById("infoR").innerHTML = "You set R = 3";
     }
     function changeR4(e) {
         R = 4;
         document.getElementById("disr").value = R;
-        drawCanva();
+        drawCanva(4);
         document.getElementById("infoR").innerHTML = "You set R = 4";
     }
     function changeR5(e) {
         R = 5;
         document.getElementById("disr").value = R;
-        drawCanva();
+        drawCanva(5);
         document.getElementById("infoR").innerHTML = "You set R = 5";
     }
 
-    function drawCanva() {
+    function drawCanva(mult) {
         plot_canvas.width+=0;
         plot_context.beginPath();
-        plot_context.arc(150, 150, 50, Math.PI, 3*Math.PI/2);
+        plot_context.arc(150, 150, 10*mult, Math.PI, 3*Math.PI/2);
         plot_context.lineTo(150, 150);
         plot_context.closePath();
-        plot_context.rect(150, 100, 100, 50);
+        plot_context.rect(150, 100+10*(5-mult), 20*mult, 10*mult);
         plot_context.fillStyle = '#3BA4C7';
         plot_context.fill();
         plot_context.beginPath();
         plot_context.moveTo(150, 150);
-        plot_context.lineTo(150, 200);
-        plot_context.lineTo(200, 150);
+        plot_context.lineTo(150, 200-10*(5-mult));
+        plot_context.lineTo(200-10*(5-mult), 150);
         plot_context.lineTo(150, 150);
         plot_context.closePath();
         plot_context.fillStyle = '#3BA4C7';
