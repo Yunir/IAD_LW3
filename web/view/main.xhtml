@@ -10,8 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="stylesheet" href="../styles/main.css"/>
         <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
-        <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
-        <script type="text/javascript" src="../scripts/validate.js"/>
         <script type="text/javascript" src="../scripts/graph.js"/>
         <script type="text/javascript" src="../scripts/main.js"/>
     </h:head>
@@ -62,18 +60,23 @@
                             </tr>
                             <tr>
                                 <th>Write Y:</th>
-                                <td><h:inputText value = "#{StudentsBean.enterY}" id="enterY" name="enterY" title="y"/></td>
+                                <td>
+                                    <h:inputText value = "#{StudentsBean.enterY}" id="enterY" name="enterY" title="y" validatorMessage="Enter correct Y (from -5 to 5)">
+                                        <f:validateDoubleRange minimum="-5.0" maximum="5.0" for="enterY"/>
+                                    </h:inputText><br/>
+                                    <h:message id="m6" for="enterY" style="color:red"/>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Choose R: </th>
                                 <td id="r">
-                                    <!--<h:commandButton id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>-->
                                     <h:commandButton id="r1" class="button" value="1" type="button"/>
                                     <h:commandButton id="r2" class="button" value="2" type="button"/>
                                     <h:commandButton id="r3" class="button" value="3" type="button"/>
                                     <h:commandButton id="r4" class="button" value="4" type="button"/>
                                     <h:commandButton id="r5" class="button" value="5" type="button"/>
                                     <p:remoteCommand name="changeR" action="#{StudentsBean.changeR}" update=":resultss" />
+                                    <div id="mesR">R not choosed..</div>
                                 </td>
                             </tr>
                             <tr>

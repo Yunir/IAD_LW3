@@ -101,30 +101,35 @@ $(document).ready(function(){
         R = 1;
         document.getElementById("disr").value = R;
         drawCanva(1);
+        document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 1";
     }
     function changeR2(e) {
         R = 2;
         document.getElementById("disr").value = R;
         drawCanva(2);
+        document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 2";
     }
     function changeR3(e) {
         R = 3;
         document.getElementById("disr").value = R;
         drawCanva(3);
+        document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 3";
     }
     function changeR4(e) {
         R = 4;
         document.getElementById("disr").value = R;
         drawCanva(4);
+        document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 4";
     }
     function changeR5(e) {
         R = 5;
         document.getElementById("disr").value = R;
         drawCanva(5);
+        document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 5";
     }
 
