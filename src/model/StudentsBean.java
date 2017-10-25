@@ -1,10 +1,7 @@
 package model;
 
-import javax.annotation.Resource;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.sql.DataSource;
 import java.io.Serializable;
 import java.sql.*;
 import java.util.ArrayList;

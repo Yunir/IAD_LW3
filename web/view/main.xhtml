@@ -12,7 +12,6 @@
         <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"/>
         <script type="text/javascript" src="../scripts/jquery.validate.min.js"/>
         <script type="text/javascript" src="../scripts/validate.js"/>
-        <script type="text/javascript" src="../scripts/interactiveImage.js"/>
         <script type="text/javascript" src="../scripts/graph.js"/>
         <script type="text/javascript" src="../scripts/main.js"/>
     </h:head>
@@ -67,11 +66,11 @@
                             <tr>
                                 <th>Choose R: </th>
                                 <td id="r">
-                                    <h:commandButton  id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r2" class="button" value="2" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r4" class="button" value="4" action="#{StudentsBean.defineR(4)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r5" class="button" value="5" action="#{StudentsBean.defineR(5)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r1" class="button" value="1" type="button" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r2" class="button" value="2" type="button" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r3" class="button" value="3" type="button" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r4" class="button" value="4" type="button" action="#{StudentsBean.defineR(4)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r5" class="button" value="5" type="button" action="#{StudentsBean.defineR(5)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
                                 </td>
                             </tr>
                             <tr>
