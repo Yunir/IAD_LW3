@@ -42,11 +42,11 @@ $(document).ready(function(){
     plot_context.stroke();
 
     //Buttons
-    document.getElementById("r1").addEventListener("click", changeR(1), false);
-    document.getElementById("r2").addEventListener("click", changeR(2), false);
-    document.getElementById("r3").addEventListener("click", changeR(3), false);
-    document.getElementById("r4").addEventListener("click", changeR(4), false);
-    document.getElementById("r5").addEventListener("click", changeR(5), false);
+    document.getElementById("r1").addEventListener("click", changeR1, false);
+    document.getElementById("r2").addEventListener("click", changeR2, false);
+    document.getElementById("r3").addEventListener("click", changeR3, false);
+    document.getElementById("r4").addEventListener("click", changeR4, false);
+    document.getElementById("r5").addEventListener("click", changeR5, false);
     plot_canvas.addEventListener("click", drawPoint, false);
 
     function drawPoint(e) {
@@ -97,9 +97,30 @@ $(document).ready(function(){
         y -= plot_canvas.offsetTop ;
     }
 
-    function changeR(r) {
-        R = r;
-        document.getElementById("infoR").innerHTML = "You set R = " + r;
+    function changeR1(e) {
+        R = 1;
+        document.getElementById("disr").value = R;
+        document.getElementById("infoR").innerHTML = "You set R = 1";
+    }
+    function changeR2(e) {
+        R = 2;
+        document.getElementById("disr").value = R;
+        document.getElementById("infoR").innerHTML = "You set R = 2";
+    }
+    function changeR3(e) {
+        R = 3;
+        document.getElementById("disr").value = R;
+        document.getElementById("infoR").innerHTML = "You set R = 3";
+    }
+    function changeR4(e) {
+        R = 4;
+        document.getElementById("disr").value = R;
+        document.getElementById("infoR").innerHTML = "You set R = 4";
+    }
+    function changeR5(e) {
+        R = 5;
+        document.getElementById("disr").value = R;
+        document.getElementById("infoR").innerHTML = "You set R = 5";
     }
 
 });

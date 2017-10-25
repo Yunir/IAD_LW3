@@ -32,7 +32,7 @@
                     <h:form id="canvaForm">
                         <h:inputHidden id="canvaX" value="#{StudentsBean.enterX}" />
                         <h:inputHidden id="canvaY" value="#{StudentsBean.enterY}" />
-                        <canvas id="plot" width="300" height="300" onclick="getVars()">
+                        <canvas id="plot" width="300" height="300">
                             Canvas not supported
                         </canvas>
                         <p:remoteCommand name="canvaReady" action="#{StudentsBean.addToList}" update=":resultss" />
@@ -41,7 +41,8 @@
                     <div id="results1"/>
                 </div>
                 <div class="form">
-                    <h:form method="post" class="data-form" id="form" prependId="false">
+                    <h:form id="formm" method="post" class="data-form" prependId="false">
+                        <h:inputHidden id="disr" value="#{StudentsBean.enterR}" />
                         <table cellpadding="10">
                             <tr>
                                 <th>Choose X:</th>
@@ -66,11 +67,14 @@
                             <tr>
                                 <th>Choose R: </th>
                                 <td id="r">
-                                    <h:commandButton id="r1" class="button" value="1" type="button" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r2" class="button" value="2" type="button" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r3" class="button" value="3" type="button" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r4" class="button" value="4" type="button" action="#{StudentsBean.defineR(4)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
-                                    <h:commandButton id="r5" class="button" value="5" type="button" action="#{StudentsBean.defineR(5)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <!--<h:commandButton id="r1" class="button" value="1" action="#{StudentsBean.defineR(1)}"><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r2" class="button" value="2" action="#{StudentsBean.defineR(2)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>
+                                    <h:commandButton id="r3" class="button" value="3" action="#{StudentsBean.defineR(3)}" ><f:ajax execute="@form" render="@form" /></h:commandButton>-->
+                                    <h:commandButton id="r1" class="button" value="1" type="button"/>
+                                    <h:commandButton id="r2" class="button" value="2" type="button"/>
+                                    <h:commandButton id="r3" class="button" value="3" type="button"/>
+                                    <h:commandButton id="r4" class="button" value="4" type="button"/>
+                                    <h:commandButton id="r5" class="button" value="5" type="button"/>
                                 </td>
                             </tr>
                             <tr>

@@ -112,7 +112,7 @@ public class StudentsBean implements Serializable {
     public String addToList(){
         int resultt = 0;
         try{
-            System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + discryptX(enterX) + " " + enterY + " " + enterR + " " + result);
+            //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + discryptX(enterX) + " " + enterY + " " + enterR + " " + result);
             connection = getConnection();
             double xx = discryptX(enterX);
             double yy = Double.parseDouble(enterY);
@@ -177,7 +177,7 @@ public class StudentsBean implements Serializable {
                 enterR = 1 + "";
                 break;
         }
-        //System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + enterR);
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + enterR);
     }
 
     private boolean checkArea(double x, double y, double r){
