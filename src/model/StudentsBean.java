@@ -180,8 +180,12 @@ public class StudentsBean implements Serializable {
         System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + enterR);
     }
 
+    public void changeR () {
+        System.out.println("AEEE :) " + enterR);
+    }
+
     private boolean checkArea(double x, double y, double r){
-        //System.out.println(x + " " + y + " " + r + " " + (x >= 0 && y >= 0) + (x <= r) + (y <= (r/2)) + " " + y + " " + r/2);
+        System.out.println(x + " " + y + " " + r + " " + (x >= 0 && y >= 0) + (x <= r) + (y <= (r/2)) + " " + y + " " + r/2);
         if((x >= 0 && y >= 0) && (x <= r) && (y <= (r/2))){
             System.out.println("1st! rectangle!");
             return true;

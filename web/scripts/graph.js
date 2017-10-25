@@ -100,27 +100,71 @@ $(document).ready(function(){
     function changeR1(e) {
         R = 1;
         document.getElementById("disr").value = R;
+        drawCanva();
         document.getElementById("infoR").innerHTML = "You set R = 1";
     }
     function changeR2(e) {
         R = 2;
         document.getElementById("disr").value = R;
+        drawCanva();
         document.getElementById("infoR").innerHTML = "You set R = 2";
     }
     function changeR3(e) {
         R = 3;
         document.getElementById("disr").value = R;
+        drawCanva();
         document.getElementById("infoR").innerHTML = "You set R = 3";
     }
     function changeR4(e) {
         R = 4;
         document.getElementById("disr").value = R;
+        drawCanva();
         document.getElementById("infoR").innerHTML = "You set R = 4";
     }
     function changeR5(e) {
         R = 5;
         document.getElementById("disr").value = R;
+        drawCanva();
         document.getElementById("infoR").innerHTML = "You set R = 5";
+    }
+
+    function drawCanva() {
+        plot_canvas.width+=0;
+        plot_context.beginPath();
+        plot_context.arc(150, 150, 50, Math.PI, 3*Math.PI/2);
+        plot_context.lineTo(150, 150);
+        plot_context.closePath();
+        plot_context.rect(150, 100, 100, 50);
+        plot_context.fillStyle = '#3BA4C7';
+        plot_context.fill();
+        plot_context.beginPath();
+        plot_context.moveTo(150, 150);
+        plot_context.lineTo(150, 200);
+        plot_context.lineTo(200, 150);
+        plot_context.lineTo(150, 150);
+        plot_context.closePath();
+        plot_context.fillStyle = '#3BA4C7';
+        plot_context.fill();
+        plot_context.beginPath();
+
+        //Ox
+        plot_context.moveTo(30, 150);
+        plot_context.lineTo(270, 150);
+        plot_context.lineTo(260, 140);
+        plot_context.moveTo(270, 150);
+        plot_context.lineTo(260, 160);
+
+        //Oy
+        plot_context.moveTo(150, 30);
+        plot_context.lineTo(140, 40);
+        plot_context.moveTo(150, 30);
+        plot_context.lineTo(160, 40);
+        plot_context.moveTo(150, 30);
+        plot_context.lineTo(150, 270);
+        plot_context.moveTo(30, 150);
+        plot_context.closePath();
+        plot_context.stroke();
+        changeR();
     }
 
 });
