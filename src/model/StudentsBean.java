@@ -116,7 +116,6 @@ public class StudentsBean implements Serializable {
             double xx = discryptX(enterX);
             double yy = Double.parseDouble(enterY);
             if(enterR.equals("")) return "";
-            System.out.println("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\nAAAAAAAAAAAAAAAAA\n" + discryptX(enterX) + " " + enterY + " " + enterR + " " + result);
             int rr = Integer.parseInt(enterR);
             PreparedStatement stmt = connection.prepareStatement(
                     "INSERT INTO hit_to_graph(user_id, x, y, r, answer) values(1, ?, ?, ?, ?)");

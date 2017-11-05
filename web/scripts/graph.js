@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var list_of_X = new Array();
+    var list_of_Y = new Array();
     var x;
     var y;
     var R = '-1';
@@ -54,21 +56,29 @@ $(document).ready(function(){
             alert("Выберите какое-нибудь значение R");
         } else {
             var cell = getCursorPosition(e);
-            plot_context.beginPath();
-            plot_context.rect(x, y, 5, 5);
-            x -= 150;
-            y -= 150;
-            y *= -1;
-            x = x/100*5;
-            y = y/100*5;
-            plot_context.fillStyle = 'gray';
-            if (checkArea(x, y, R) == 1) plot_context.fillStyle = 'white';
-            plot_context.fill();
-            plot_context.closePath();
+            list_of_X.push(x);
+            list_of_Y.push(y);
+            drawDefinedPoint(x, y);
             document.getElementById("canvaForm:canvaX").value = x;
             document.getElementById("canvaForm:canvaY").value = y;
             canvaReady();
         }
+    }
+
+    function drawDefinedPoint(xx, yy) {
+        plot_context.beginPath();
+        plot_context.rect(xx, yy, 5, 5);
+        xx -= 150;
+        yy -= 150;
+        yy *= -1;
+        xx = xx/100*5;
+        yy = yy/100*5;
+        plot_context.fillStyle = 'gray';
+        if (checkArea(xx, yy, R) == 1) plot_context.fillStyle = 'white';
+        plot_context.fill();
+        plot_context.closePath();
+        x = xx;
+        y = yy;
     }
 
     function checkArea(x, y, r){
@@ -101,6 +111,9 @@ $(document).ready(function(){
         R = 1;
         document.getElementById("disr").value = R;
         drawCanva(1);
+        list_of_X.forEach(function(item, i, arr) {
+            drawDefinedPoint(item, list_of_Y[i]);
+        });
         document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 1";
     }
@@ -108,6 +121,9 @@ $(document).ready(function(){
         R = 2;
         document.getElementById("disr").value = R;
         drawCanva(2);
+        list_of_X.forEach(function(item, i, arr) {
+            drawDefinedPoint(item, list_of_Y[i]);
+        });
         document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 2";
     }
@@ -115,6 +131,9 @@ $(document).ready(function(){
         R = 3;
         document.getElementById("disr").value = R;
         drawCanva(3);
+        list_of_X.forEach(function(item, i, arr) {
+            drawDefinedPoint(item, list_of_Y[i]);
+        });
         document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 3";
     }
@@ -122,6 +141,9 @@ $(document).ready(function(){
         R = 4;
         document.getElementById("disr").value = R;
         drawCanva(4);
+        list_of_X.forEach(function(item, i, arr) {
+            drawDefinedPoint(item, list_of_Y[i]);
+        });
         document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 4";
     }
@@ -129,6 +151,9 @@ $(document).ready(function(){
         R = 5;
         document.getElementById("disr").value = R;
         drawCanva(5);
+        list_of_X.forEach(function(item, i, arr) {
+            drawDefinedPoint(item, list_of_Y[i]);
+        });
         document.getElementById("mesR").style.display = "none";
         document.getElementById("infoR").innerHTML = "You set R = 5";
     }
