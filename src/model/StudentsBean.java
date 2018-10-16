@@ -72,7 +72,7 @@ public class StudentsBean implements Serializable {
     public Connection getConnection(){
         try{
             Class.forName("org.postgresql.Driver");
-            connection = DriverManager.getConnection( "jdbc:postgresql://localhost:5432/IAD_LW3","postgres","54321");
+            connection = DriverManager.getConnection( "jdbc:postgresql://192.168.10.99:5432/studs","s225096","******");
         }catch(Exception e){
             System.out.println(e);
         }
@@ -85,7 +85,7 @@ public class StudentsBean implements Serializable {
 
         List<StudentsBean> list = new ArrayList<StudentsBean>();
         PreparedStatement pstmt = connect
-                .prepareStatement("select x, y, r, answer from hit_to_graph");
+                .prepareStatement("select x, y, r, answer from s225096.hit_to_graph");
         ResultSet rs = pstmt.executeQuery();
 
         while (rs.next()) {
@@ -107,6 +107,14 @@ public class StudentsBean implements Serializable {
 
         return list;
 
+    }
+
+    public String toMain() {
+        return "main.xhtml?faces-redirect=true";
+    }
+
+    public String toIndex() {
+        return "index.xhtml?faces-redirect=true";
     }
 
     public String addToList(){
